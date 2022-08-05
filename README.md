@@ -1,7 +1,5 @@
 # deep-sea-drop-cam
-Blue Eye: a low cost device to explore the deep sea up to 1,000 meters of depth
-
-Arduino-powered deep-sea drop-cam capable of submerging 500 meters of depth at a cost of US$1,300.
+Blue Eye: a low cost Arduino-powered device to explore the deep sea up to 1,000 meters of depth at a cost of US$1,300.
 
 ![IMG_2028](https://user-images.githubusercontent.com/44911766/183107335-308d5a5f-92d5-460c-bb81-bdb6824492b0.jpeg)
 
