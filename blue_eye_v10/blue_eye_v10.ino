@@ -1,5 +1,6 @@
 // Project Blue Eye
 // by Pau Anta, more information at http://www.pauanta.bio
+// This code has an MIT License
 
 // Development of an open-source low-cost deep-sea drop-cam for marine exploration
 // Inspired in the Drop-Cam invented by Alan Turchik, National Geographic Innovation Labs
@@ -9,8 +10,7 @@
 // Goal: up to 500m of depth, for a maximum cost of $500. However, the Bill of Materials to build this model costs about $1,400
 // The Blue Eye is a device controlled by an Artuino MKR WiFi, connected to a GoPro Hero5 Session
 
-// Reused code developed by @randofo in Instructables, with a Creative Commons license CC BY-NC-SA 4.0
-// This code has an MIT License
+// Code to connect Arduino to GoPro's wifi and control its video features written by @randofo from Instructables, license CC BY-NC-SA 4.0
 
 // January 2019 - system is activated by a contactless magnetic switch
 // April 2019 - from v6, code introduces millis() instead of delay() to allow for running code while waiting (dropTime and recordingTime).
