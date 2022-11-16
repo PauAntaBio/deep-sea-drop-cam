@@ -9,6 +9,9 @@
 // Goal: up to 500m of depth, for a maximum cost of $500. However, the Bill of Materials to build this model costs about $1,400
 // The Blue Eye is a device controlled by an Artuino MKR WiFi, connected to a GoPro Hero5 Session
 
+// Reused code developed by @randofo in Instructables, with a Creative Commons license CC BY-NC-SA 4.0
+// This code has an MIT License
+
 // January 2019 - system is activated by a contactless magnetic switch
 // April 2019 - from v6, code introduces millis() instead of delay() to allow for running code while waiting (dropTime and recordingTime).
 // April 2019 - integrated temp and humidity sensor
@@ -18,7 +21,7 @@
 // October 2019 - refinement of features and added tech specs in comments
 // May 2022 - refinement of burnwire, added PWM to lights
 // Aug 2022 - tests in Menorca.
-// October 2022 - Release of design, assembly guide, 3D parts and code in GitHub.
+// October 2022 - release of design, assembly guide, 3D parts and code in GitHub.
 
 // Gopro Hero 5 session
 // Key aspects of GoPro's statuses
@@ -48,7 +51,7 @@ const int oneMinute = 60000;      // 60,000 millisecons = 1 minute
                                   // settings for the mission
 int dropTime = 1;                 // estimated duration to get to the seabed in minutes
                                   // it CAN'T be more than 5m. GoPro turns into sleep mode after 5m
-int recordingTime = 20;            // duration of video recording in minutes
+int recordingTime = 20;           // duration of video recording in minutes
 
 unsigned long time_now = 0;
                                   // LEDs for signaling status
@@ -101,7 +104,7 @@ void setup() {
   pinMode (lightsPin, OUTPUT);
   pinMode (burnwirePin, OUTPUT);  
   
-  digitalWrite (burnwirePin, LOW);    // not sure if I need this or not
+  digitalWrite (burnwirePin, LOW);
 
   pinMode (LEDstatus, OUTPUT);
   pinMode (LEDmagswitch, OUTPUT);
@@ -200,12 +203,12 @@ void loop() {
 
 }
 
+// Arduino attempts to connect to GoPro's wifi network, developed by @randofo from Instructables
 
 void ConnectToGoPro(){
   
   status = WiFi.begin(ssid, pass);
 
-  // Arduino attempts to connect to GoPro's wifi network
   while ( status != WL_CONNECTED) {
     printInLog("Arduino is attempting to connect to GoPro's WiFi ...");
     printInLog(String(status));
@@ -233,7 +236,7 @@ void ConnectToGoPro(){
 }
 
 
-// Arduino disconnects from GoPro's WiFi
+// Arduino disconnects from GoPro's WiFi, developed by @randofo from Instructables
 void DisconnectFromGoPro(){
 
   WiFi.disconnect();
@@ -261,7 +264,7 @@ void MagneticSwitch(){
 }
 
 
-// wake up GoPro
+// wake up GoPro, developed by @randofo from Instructables
 void WakeupGoPro(){
 
   //Begin UDP communication
@@ -285,7 +288,7 @@ void WakeupGoPro(){
 }
 
 
-// Function to create and send magic packet
+// Function to create and send magic packet, developed by @randofo from Instructables
 // https://www.logicaprogrammabile.it/wol-accendere-computer-arduino-wake-on-lan/
 
 void SendMagicPacket(){
@@ -352,7 +355,7 @@ void StopRecording(){
     return;
   }
 
-  //Command for stopping recording
+  //Command for stopping recording, developed by @randofo from Instructables
   
   String StopUrl = "/gp/gpControl/command/shutter?p=0";
   client.print(String("GET ") + StopUrl + " HTTP/1.1\r\n" +
